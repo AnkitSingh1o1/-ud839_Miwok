@@ -1,10 +1,9 @@
 package com.example.ud839_miwok_lesson_one;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -16,24 +15,28 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
 
         //Create array of words
-        ArrayList<String> words = new ArrayList<>();
-        words.add("One");
-        words.add("Two");
-        words.add("Three");
-        words.add("Four");
-        words.add("Five");
-        words.add("Six");
-        words.add("Seven");
-        words.add("Eight");
-        words.add("Nine");
-        words.add("Ten");
+        ArrayList<Word> words = new ArrayList<>();
+        //Word w = new Word("one","lutti");
+        //words.add(w);     OR we can write
+        words.add(new Word("one","lutti"));
+        words.add(new Word("two","ottoko"));
+        words.add(new Word("three","titi"));
+        words.add(new Word("four","ufmsrr"));
+        words.add(new Word("five","butti"));
+        words.add(new Word("six","pitti"));
+        words.add(new Word("seven","setti"));
+        words.add(new Word("eight","mitti"));
+        words.add(new Word("nine","chitti"));
+        words.add(new Word("one","katti"));
 
-        LinearLayout rootView = (LinearLayout)findViewById(R.id.rootView);
-        for(int i = 0; i < words.size(); i++) {
-            TextView wordView = new TextView(this);
-            wordView.setText(words.get(i));
-            rootView.addView(wordView);
-        }
+//        ArrayAdapter<Word> itemsAdapter = new ArrayAdapter<Word>(this,R.layout.list_item, words);
+        WordAdapter adapter = new WordAdapter(this, words);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        listView.setAdapter(adapter);
+
+
 
     }
 }
