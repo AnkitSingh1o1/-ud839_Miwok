@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="miwok_text_view" type="id">miwok_text_view</item>
+    <item name="default_text_view" type="id">default_text_view</item>
+</resources>
