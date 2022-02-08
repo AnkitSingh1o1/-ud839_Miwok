@@ -2,4 +2,5 @@
 <resources>
     <item name="miwok_text_view" type="id">miwok_text_view</item>
     <item name="default_text_view" type="id">default_text_view</item>
+    <item name="list" type="id">list</item>
 </resources>
